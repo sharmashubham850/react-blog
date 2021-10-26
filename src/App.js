@@ -1,25 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Route } from "react-router-dom";
+import Home from "./components/Home";
+import LoginForm from "./components/LoginForm";
+import Navbar from "./components/Navbar";
+import PostCreate from "./components/PostCreate";
+import PostDelete from "./components/PostDelete";
+import PostEdit from "./components/PostEdit";
+import PostList from "./components/PostList";
+import RegisterForm from "./components/RegisterForm";
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <main>
+      <BrowserRouter>
+        <Navbar /> {/* Using Redux store */}
+        <Route path="/" exact>
+          <Home /> {/* Using Redux store */}
+        </Route>
+        <Route path="/posts" exact>
+          <PostList /> {/* Using Redux store */}
+        </Route>
+        <Route path="/posts/edit/:postId">
+          <PostEdit /> {/* Using Redux store */}
+        </Route>
+        <Route path="/posts/delete/:postId">
+          <PostDelete /> {/* Using Redux store */}
+        </Route>
+        <Route path="/posts/create">
+          <PostCreate /> {/* Using Redux store */}
+        </Route>
+        <Route path="/user/login">
+          <LoginForm /> {/* Using Redux store */}
+        </Route>
+        <Route path="/user/register">
+          <RegisterForm /> {/* Using Redux store */}
+        </Route>
+      </BrowserRouter>
+    </main>
   );
 }
-
-export default App;
