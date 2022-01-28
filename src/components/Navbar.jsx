@@ -1,4 +1,4 @@
-import { Link, useHistory } from "react-router-dom";
+import { Link, NavLink, useHistory } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 
 import { logoutUser } from "../actions/authActions";
@@ -24,16 +24,16 @@ export default function Navbar() {
         <div className="collapse navbar-collapse" id="navbar">
           <ul className="navbar-nav ms-auto">
             <li className="nav-item mx-2">
-              <Link className="nav-link active" to="/posts">
+              <NavLink className="nav-link" to="/posts">
                 All Posts
-              </Link>
+              </NavLink>
             </li>
             {loggedInUser ? (
               <>
                 <li className="nav-item mx-2">
-                  <Link className="nav-link" to="/posts/create">
+                  <NavLink className="nav-link" to="/posts/create">
                     Create Post
-                  </Link>
+                  </NavLink>
                 </li>
                 <li className="nav-item mx-2">
                   <span
@@ -47,9 +47,9 @@ export default function Navbar() {
               </>
             ) : (
               <li className="nav-item mx-2">
-                <Link className="nav-link" to="/user/login">
+                <NavLink className="nav-link" to="/user/login">
                   Login
-                </Link>
+                </NavLink>
               </li>
             )}
           </ul>
