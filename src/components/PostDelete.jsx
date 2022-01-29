@@ -5,8 +5,8 @@ import { deletePost } from "../actions/postActions";
 
 export default function PostDelete() {
   const { postId } = useParams();
-
   const history = useHistory();
+
   const dispatch = useDispatch();
 
   const handleDelete = () => {
@@ -15,7 +15,6 @@ export default function PostDelete() {
   };
 
   const handleCancel = (e) => {
-    e.preventDefault();
     history.goBack();
   };
 

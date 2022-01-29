@@ -27,7 +27,7 @@ export default function LoginForm({ setUser }) {
 
     if (user) {
       dispatch(loginUser(user)); // Dispatching login user action
-      history.push("/"); // Redirect to Homepage
+      history.replace("/"); // Redirect to Homepage
     } else {
       setError(true);
     }
