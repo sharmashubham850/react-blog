@@ -1,11 +1,18 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { getPosts } from "../services/PostService";
 
 const PostList = () => {
-  const posts = useSelector((state) => state.posts);
+  // const posts = useSelector((state) => state.posts);
   const users = useSelector((state) => state.users);
   const loggedInUser = useSelector((state) => state.loggedInUser);
+
+  const [posts, setPosts] = useState([]);
+
+  useEffect(() => {
+    getPosts().then((data) => setPosts(data));
+  }, []);
 
   // fetch a user by Id
   const findUserById = (id) => {
