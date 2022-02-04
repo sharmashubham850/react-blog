@@ -12,27 +12,27 @@ export default function App() {
   return (
     <main>
       <BrowserRouter>
-        <Navbar /> {/* Using Redux store */}
+        <Navbar />
         <Route path="/" exact>
-          <Home /> {/* Using Redux store */}
+          <Home />
         </Route>
         <Route path="/posts" exact>
-          <PostList /> {/* Using Redux store */}
+          <PostList />
         </Route>
         <Route path="/posts/edit/:postId">
-          <PostEdit /> {/* Using Redux store */}
+          <PostEdit />
         </Route>
         <Route path="/posts/delete/:postId">
-          <PostDelete /> {/* Using Redux store */}
+          <PostDelete />
         </Route>
         <Route path="/posts/create">
-          <PostCreate /> {/* Using Redux store */}
+          <PostCreate />
         </Route>
         <Route path="/user/login">
-          <LoginForm /> {/* Using Redux store */}
+          <LoginForm />
         </Route>
         <Route path="/user/register">
-          <RegisterForm /> {/* Using Redux store */}
+          <RegisterForm />
         </Route>
       </BrowserRouter>
     </main>
