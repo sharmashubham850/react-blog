@@ -6,7 +6,9 @@ export async function getPosts() {
     console.log(data);
     return data;
   } catch (err) {
-    console.log("Error: ", err);
+    console.log("Error: ", err.response);
+
+    throw new Error(err);
   }
 }
 
@@ -16,7 +18,9 @@ export async function getPostById(id) {
     console.log(data);
     return data;
   } catch (err) {
-    console.log("Error: ", err);
+    console.log("Error: ", err.response);
+
+    throw new Error(err);
   }
 }
 // ---------------------------------------------------------------

@@ -11,7 +11,9 @@ const PostList = () => {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    getPosts().then((data) => setPosts(data));
+    getPosts()
+      .then((data) => setPosts(data))
+      .catch((err) => setPosts([]));
   }, []);
 
   // fetch a user by Id
